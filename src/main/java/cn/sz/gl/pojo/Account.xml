@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sz.gl.dao.IAccountDAO" >
+
+	<!-- 根据用户编号，查询账号信息 -->
+	<select id="findAccidByUserid" parameterType="java.lang.Integer" resultType="java.lang.Integer" >
+		select accid from t_account where userid=#{userid}
+	</select>
+	
+	<!-- 根据账号，查询账户余额和名字 -->
+	<select id="findAccByAccid" parameterType="java.lang.Integer" resultType="cn.sz.gl.pojo.Account">
+		select accname,balance from t_account where accid=#{accid}
+	</select>
+	
+	<!-- 账户余额减少 -->
+	<update id="minusPriceInBalance" parameterType="java.util.Map">
+		update t_account set balance=balance-#{price} where accid=#{accid}
+	</update>
+	
+</mapper>
