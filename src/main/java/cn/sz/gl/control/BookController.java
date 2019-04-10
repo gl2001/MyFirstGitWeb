@@ -45,7 +45,7 @@ public class BookController {
 	private IAccountService accService;
 	
 	public String show(){
-		System.out.println("show");
+		System.out.println("show.....");
 		return "main";
 	}
 	
