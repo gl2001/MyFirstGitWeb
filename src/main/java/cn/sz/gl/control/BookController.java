@@ -44,6 +44,12 @@ public class BookController {
 	@Autowired
 	private IAccountService accService;
 	
+	public String show(){
+		System.out.println("show");
+		return "main";
+	}
+	
+	
 	/*@RequestMapping(value="addbook",method=RequestMethod.POST)
 	public String addBook(Book book,@RequestParam MultipartFile pic,HttpServletRequest request){
 		System.out.println("book–≈œ¢£∫");
